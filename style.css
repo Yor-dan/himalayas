@@ -1,0 +1,351 @@
+@font-face {
+  font-family: 'Century Gothic';
+  src: url(assets/fonts/century-gothic.ttf);
+}
+
+/* reset css */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  /* remove default links style */
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  /* prevent images from getting too big */
+  max-width: 100%;
+}
+
+/* variables */
+:root {
+  --text-secondary: #FFF;
+  --font-primary: 'Times New Roman';
+  --font-secondary: 'Century Gothic';
+}
+
+/* global */
+:root {
+  --screen-offset: 0;
+}
+
+p {
+  --size: 0.05rem;
+  text-align: justify;
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  letter-spacing: var(--size);
+  padding-left: var(--size);
+}
+
+img {
+  object-fit: cover;
+  box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.50);
+}
+
+/* navbar */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: 1;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  background-color: #000000b3;
+}
+
+nav > ul > li {
+  list-style-type: none;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+nav > ul > li > a {
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+}
+
+/* hero banner */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.600),rgba(0, 0, 0, 0.600)), url(assets/images/roof-of-the-world.webp);
+  background-size: cover;
+}
+
+.hero > h1 {
+  --size: 2rem;
+  font-size: var(--size);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--size);
+  text-align: center;
+  padding-left: var(--size);
+  line-height: 6rem;
+}
+
+/* main */
+main {
+  margin-bottom: 2rem;
+}
+
+main > article {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* introduction */
+.introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 0.75rem;
+}
+
+.introduction > h2 {
+  --size: 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: var(--size);
+  padding-left: var(--size);
+}
+
+/* geography, locals, everest */
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-container li {
+  margin-left: 1rem;
+  text-align: justify;
+}
+
+.subheading {
+  display: flex;
+  padding: 1rem 0.75rem;
+  text-transform: uppercase;
+  font-family: var(--font-secondary);
+  color: var(--text-secondary);
+  background-color: #000;
+}
+
+.subheading > h3 {
+  --size: 0.5rem;
+  letter-spacing: var(--size);
+  font-size: 1.5rem;
+}
+
+.paragraph-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.75rem;
+}
+
+.paragraph-container li {
+  --size: 0.05rem;
+  letter-spacing: var(--size);
+  padding-left: var(--size);
+}
+
+aside > img {
+  height: 12.5rem;
+  width: 100%;
+}
+
+.tibetans {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.tibetans > div {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.tibetans > div > img {
+  width: 50%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-secondary);
+  color: var(--text-secondary);
+  background-color: #000;
+  font-size: 0.8rem;
+  padding: 1rem;
+}
+
+/* responsive */
+@media only screen and (width >= 375px ) {
+  .hero > h1 {
+    --size: 2.4rem;
+    line-height: 7rem;
+  }
+
+  .introduction > h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media only screen and (width >= 425px ) {
+  nav > ul > li > a {
+    font-size: 1rem;
+  }
+  
+  .hero > h1 {
+    --size: 2.8rem;
+    font-size: 2.2rem;
+  }
+}
+
+@media only screen and (width >= 768px ) {
+  .introduction > h2 {
+    --size: 2.8rem;
+    font-size: 3.5rem;
+  }
+
+  .mountain-range img {
+    height: 12.5rem;
+    width: 100%;
+  }
+
+  .tibetans {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .tibetans img {
+    height: 16rem;
+  }
+}
+
+@media only screen and (width >= 1024px ) {
+  :root {
+    --screen-offset: 3rem;
+  }
+
+  .hero > h1 {
+    --size: 3rem;
+    font-size: 4rem;
+    margin: 3rem;
+  }
+
+  .introduction {
+    padding: 2rem var(--screen-offset);
+  }
+
+  .introduction > h2 {
+    --size: 4rem;
+    font-size: 4rem;
+  }
+
+  .section-container {
+    flex-direction: row;
+  }
+
+  .section-container > div {
+    width: 75%;
+  }
+
+  .subheading, .paragraph-container {
+    padding-left: var(--screen-offset);
+    padding-right: 0;
+  }
+
+  aside {
+    width: 25%;
+    padding-right: var(--screen-offset);
+  }
+
+  aside > img {
+    height: 100%;
+  }
+
+  .mountain-range {
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    margin: 4rem 0;
+  }
+
+  .mountain-range > img {
+    height: 16rem;
+    width: 100%;
+    margin: 0 var(--screen-offset);
+  }
+
+  .tibetans {
+    padding: 0 var(--screen-offset);
+    gap: 2rem;
+  }
+
+  .tibetans > div {
+    gap: 2rem;
+  }
+
+  .tibetans > div > img {
+    height: auto;
+    width: 40%;
+  }
+}
+
+@media only screen and (width >= 1440px ) {
+  :root {
+    --screen-offset: 6rem;
+  }
+
+  .introduction > h2 {
+    --size: 4.5rem;
+    font-size: 6rem;
+  }
+
+  .section-container {
+    gap: 4rem;
+  }
+
+  .subheading > h3 {
+    font-size: 2rem;
+  }
+
+  p, .section-container li {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+}
